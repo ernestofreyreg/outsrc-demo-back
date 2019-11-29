@@ -1,0 +1,25 @@
+{
+  "name": "outsrc-demo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "morgan": "^1.9.1",
+    "rvl-pipe": "^1.7.0",
+    "rvl-pipe-express": "^0.5.0"
+  },
+  "devDependencies": {
+    "prettier-standard": "^16.0.0",
+    "standard": "^14.3.1"
+  }
+}
