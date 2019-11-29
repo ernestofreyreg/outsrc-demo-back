@@ -1,7 +1,7 @@
 const { createServer, startListening } = require('rvl-pipe-express')
 const { each, always } = require('rvl-pipe')
 const packageInfo = require('../package.json')
-const items = require('./items')
+const states = require('./states')
 
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
@@ -22,10 +22,10 @@ const server = each(
       handlers: [
         { method: 'get', path: '/status', fn: status },
         {
-          path: '/items',
+          path: '/states',
           handlers: [
-            { method: 'get', path: '/', fn: items.getAllItems },
-            { method: 'get', path: '/:state', fn: items.getItem }
+            { method: 'get', path: '/', fn: states.getAllStates },
+            { method: 'get', path: '/:state', fn: states.getState }
           ]
         }
       ]

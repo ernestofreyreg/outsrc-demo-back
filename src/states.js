@@ -1,6 +1,6 @@
 const { each, always, props, prop, set, should } = require('rvl-pipe')
 
-const items = {
+const states = {
   AK: 'Alaska',
   AL: 'Alabama',
   AR: 'Arkansas',
@@ -58,15 +58,15 @@ const items = {
   WY: 'Wyoming'
 }
 
-const itemsList = Object.keys(items)
-const getAllItems = each(
+const statesList = Object.keys(states)
+const getAllStates = each(
   always({
-    items: itemsList
+    states: statesList
   })
 )
 
-const getItem = each(
-  set(props({ name: ctx => items[ctx.params.state] })),
+const getState = each(
+  set(props({ name: ctx => states[ctx.params.state] })),
   should(prop('name'), 'StateNotFound'),
   props({
     state: prop('params.state'),
@@ -75,6 +75,6 @@ const getItem = each(
 )
 
 module.exports = {
-  getAllItems,
-  getItem
+  getAllStates,
+  getState
 }
